@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header class="container">
+        <nav class="row justify-content-center py-3 bg custom-nav">
+            <a class="col-auto cabecalho__menu__link" href="index.html">Homepage</a>
+            <a class="col-auto cabecalho__menu__link" href="about.html">Sobre mim</a>
+        </nav>
+    </header>
+
+    <main class="container mt-5 flex-grow-1">
+        <div class="row">
+            <div class="col-md-6">
+                <section class="apresentacao__conteudo">
+                    <h1 class="apresentacao__conteudo__titulo" id="titulo">Atividade: Thiago Medeiros<strong class="titulo-destaque"></strong></h1>
+                    <p class="apresentacao__conteudo__texto" id="descricao">Olá! Sou Thiago Medeiros de Sousa, aluno de Sistemas para Internet, no IFTO - Campus Palmas, 3° Período. Esta site tem o intuito de ser a atividade proposta.</p>
+                </section>
+            </div>
+            <div class="col-md-6 text-center">
+                <img class="img-fluid custom-size" src="assets/thiago.jpeg" alt="Foto do Thiago">
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <div class="apresentacao__links">
+                <h2 class="apresentacao__links__subtitulo">Acesse minhas redes</h2>
+                <a class="apresentacao__links__link" href="https://github.com/thmsousa">
+                    <img src="./assets/github.png" class="logo">
+                    Github
+                </a>
+                <a class="apresentacao__links__link" href="https://www.linkedin.com/in/thiago-medeiros-35363b276/">
+                    <img src="./assets/linkedin.png" class="logo">
+                    Linkedin
+                </a>
+                <a class="apresentacao__links__link" href="https://www.instagram.com/thm.sousa?igsh=MXFzdWJrb2U2ZDk2NA==">
+                    <img src="./assets/instagram.png" class="logo">
+                    Instagram
+                </a>
+            </div>
+        </div>
+
+        <div class="container mt-5 mb-5">
+            <h2>Atualizar Informações</h2>
+            <form id="updateForm">
+                <div class="form-group">
+                    <label for="tituloInput"><strong>Título</label>
+                    <input type="text" class="form-control" id="tituloInput" placeholder="Digite o título">
+                </div>
+                <div class="form-group">
+                    <label for="descricaoInput"><strong>Descrição:</strong></label>
+                    <textarea class="form-control" id="descricaoInput" rows="3" placeholder="Digite a descrição"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="fotoInput">Foto:</label>
+                    <input type="file" class="form-control-file" id="fotoInput">
+                </div>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 rodape mt-auto">
+        <p>Desenvolvido por Thiago M.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const titulo = document.getElementById('tituloInput').value;
+            const descricao = document.getElementById('descricaoInput').value;
+            const fotoInput = document.getElementById('fotoInput').files[0];
+
+            if (titulo) document.getElementById('titulo').innerText = titulo;
+            if (descricao) document.getElementById('descricao').innerText = descricao;
+            if (fotoInput) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('foto').src = e.target.result;
+                }
+                reader.readAsDataURL(fotoInput);
+            }
+        });
+    </script>
+</body>
+
+</html>

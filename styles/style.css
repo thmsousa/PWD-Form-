@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: #f8f7f7;
+    --cor-secundaria: #000000;
+    --cor-terciaria: #300a98;
+    --cor-hover: #d4d1d1;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.custom-nav {
+    border-radius: 15px; /* Opcional: arredondamento dos cantos */
+    box-shadow: 0 4px 8px rgba(141, 141, 147, 0.9); /* Opcional: sombra */
+    margin-bottom: 50px;
+}
+
+.nav-link {
+    color: white; /* Cor dos links */
+    padding: 0.5rem 1rem; /* Espaçamento interno dos links */
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.apresentacao {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    margin-bottom: 90px;
+}
+
+.apresentacao__conteudo {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border: 4px solid var(--cor-hover);
+    width: 30%;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 11.5px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__links__link:hover {
+    background-color: var(--cor-hover);
+}
+
+.logo {
+    filter: hue-rotate(130deg) brightness(0.4);
+    padding: 10px; 
+    border-radius: 10px;
+    margin-right: -15px; 
+}
+
+.custom-size {
+    border-radius: 40px;
+    max-width: 100%;
+    width: 70%;
+    height: auto;
+}
+
+.rodape {
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    padding: 20px;
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #f0e6e6;
+}
+
+
+#updateForm {
+    background-color: #ffffff; /* Cor de fundo do formulário */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 30px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(7, 27, 204, 0.7); /* Sombra do formulário */
+}
+
+#updateForm h2 {
+    font-family: var(--fonte-primaria); /* Fonte primária do título */
+    color: var(--cor-terciaria); /* Cor do título */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+#updateForm .form-group {
+    margin-bottom: 20px; /* Espaçamento inferior entre grupos de formulário */
+}
+
+#updateForm label {
+    font-family: var(--fonte-secundaria); /* Fonte secundária para os rótulos */
+    font-size: 1rem; /* Tamanho da fonte dos rótulos */
+    color: var(--cor-terciaria); /* Cor dos rótulos */
+    margin-bottom: 5px; /* Espaçamento inferior dos rótulos */
+    display: block; /* Exibe os rótulos como blocos */
+    color: var(--cor-terciaria);
+}
+
+#updateForm .form-control {
+    border-radius: 8px; /* Cantos arredondados dos campos de texto */
+    border: 1px solid #c1b6b6; /* Cor da borda */
+    padding: 10px; /* Espaçamento interno dos campos de texto */
+    font-size: 1rem; /* Tamanho da fonte dos campos de texto */
+    background-color: #f5f5f5;
+}
+
+#updateForm .form-control-file {
+    border-radius: 10px; /* Cantos arredondados dos campos de arquivo */
+    border: 1px solid #ccc; /* Cor da borda */
+    padding: 10px; /* Espaçamento interno dos campos de arquivo */
+    background-color: #fafafa;
+}
+
+#updateForm button {
+    background-color: var(--cor-terciaria); 
+    border: none; /* Remove a borda padrão do botão */
+    color: white; /* Cor do texto do botão */
+    border-radius: 10px; /* Cantos arredondados do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    font-size: 1rem; /* Tamanho da fonte do botão */
+    font-family: var(--fonte-secundaria); /* Fonte do botão */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+
+#updateForm button:hover {
+    background-color: var(--cor-hover); /* Cor de fundo do botão ao passar o mouse */
+}
+
+
+
+/* Media Queries para Responsividade */
+
+/* Para telas menores que 1200px */
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 2% 0% 0% 5%;
+    }
+    .cabecalho__menu {
+        gap: 40px;
+    }
+    .apresentacao {
+        padding: 5% 5%;
+    }
+    .apresentacao__conteudo {
+        width: 100%;
+    }
+    .apresentacao__imagem {
+        width: 50%;
+        max-width: 300px;
+    }
+}
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+    .cabecalho__menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .apresentacao {
+        flex-direction: column;
+        text-align: center;
+    }
+    .apresentacao__conteudo {
+        width: 100%;
+        gap: 20px;
+    }
+    .apresentacao__imagem {
+        width: 70%;
+        max-width: 300px;
+    }
+    .apresentacao__links__link {
+        width: 80%;
+        font-size: 1.2rem;
+    }
+    
+}
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+    .cabecalho__menu__link {
+        font-size: 1.2rem;
+    }
+    .apresentacao__conteudo__titulo {
+        font-size: 1.8rem;
+    }
+    .apresentacao__conteudo__texto {
+        font-size: 1.2rem;
+    }
+    .apresentacao__links__link {
+        font-size: 1.2rem;
+        padding: 16px 0;
+    }
+    .rodape {
+        font-size: 1.2rem;
+        padding: 16px;
+    }
+}

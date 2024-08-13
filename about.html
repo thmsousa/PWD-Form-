@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header class="container">
+        <nav class="row justify-content-center py-3 bg custom-nav">
+            <a class="col-auto cabecalho__menu__link" href="index.html">Homepage</a>
+            <a class="col-auto cabecalho__menu__link" href="about.html">Sobre mim</a>
+        </nav>
+    </header>
+
+    <main class="container mt-5 flex-grow-1">
+        <div class="row">
+            <div class="col-md-6">
+                <section class="apresentacao__conteudo">
+                    <h1 class="apresentacao__conteudo__titulo" id="titulo">Sobre mim</h1>
+                    <p class="apresentacao__conteudo__texto" id="descricao">Nessa aba, farei uma breve autodescrição sobre minha pessoa, compartilhando algumas informações básicas sobre minha vida pessoal e acadêmica.</p>
+                </section>
+            </div>
+            <div class="col-md-6 text-center">
+                <img class="img-fluid" id="foto" src="assets/thiago.jpeg" alt="Foto do Thiago Medeiros">
+            </div>
+        </div>
+
+        <div class="container mt-5 mb-5">
+            <h2>Atualizar Informações</h2>
+            <form id="updateForm">
+                <div class="form-group">
+                    <label for="tituloInput"><strong>Título</label>
+                    <input type="text" class="form-control" id="tituloInput" placeholder="Digite o título">
+                </div>
+                <div class="form-group">
+                    <label for="descricaoInput">Descrição:</label>
+                    <textarea class="form-control" id="descricaoInput" rows="3" placeholder="Digite a descrição"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="fotoInput">Foto:</label>
+                    <input type="file" class="form-control-file" id="fotoInput">
+                </div>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 rodape mt-5">
+        <p>Desenvolvido por Thiago M.</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const titulo = document.getElementById('tituloInput').value;
+            const descricao = document.getElementById('descricaoInput').value;
+            const fotoInput = document.getElementById('fotoInput').files[0];
+
+            if (titulo) document.getElementById('titulo').innerText = titulo;
+            if (descricao) document.getElementById('descricao').innerText = descricao;
+            if (fotoInput) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('foto').src = e.target.result;
+                }
+                reader.readAsDataURL(fotoInput);
+            }
+        });
+    </script>
+</body>
+
+</html>
